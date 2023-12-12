@@ -15,6 +15,8 @@
  */
 package com.example.cupcake
 
+import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -163,6 +165,11 @@ private fun cancelOrderAndNavigateToStart(
     navController.popBackStack(CupcakeScreen.Start.name, inclusive = false)
 }
 
+private fun shareOrder(context : Context, subject: String, summary: String) {
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+    }
+}
 
 
 
